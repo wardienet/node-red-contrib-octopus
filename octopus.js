@@ -42,7 +42,9 @@ module.exports = function(RED) {
 
             if ( next_run <= now ) {
                 var start_time = now.toISOString();
-                var endt = new Date(now.getTime() + 24*60*60*1000);
+                // update to request data 48h ahead - which should always get all available
+                //var endt = new Date(now.getTime() + 24*60*60*1000);
+                var endt = new Date(now.getTime() + 48*60*60*1000);
                 var end_time = endt.toISOString();
                 let msg2 = {};
                 msg2.topic = "octopus";
