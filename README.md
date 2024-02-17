@@ -1,13 +1,15 @@
 node-red-contrib-octopus
 ========================
 
-# Under Development
+# Under Development (fork of borpin's work, thank you)
 
 A <a href="https://nodered.org" target="_new">Node-RED</a> node to extract the <a href="https://octopus.energy" target="_new">Octopus Agile</a> future price data via the API.
 
-My [referral code](https://share.octopus.energy/wise-jade-356) if you are switching to Octopus and feel kind.
+Borpin's [referral code](https://share.octopus.energy/wise-jade-356) if you are switching to Octopus and feel kind.
 
-The Octopus Agile Tariff is a UK Electricity Tariff that is priced throughout the day in 30 minute blocks (periods). The price varies considerably over a 24Hr period. To see a historical view of the pricing visit <a href="https://www.energy-stats.uk/octopus-agile/">energy-stats</a>. The pricing data is released at approximately 16:00Z for the next 23:00Z to 23:00Z period. This node always retrieves all the data available.
+The Octopus Agile Tariff is a UK Electricity Tariff that is priced throughout the day in 30 minute blocks (periods). The price varies considerably over a 24Hr period. To see a historical view of the pricing visit <a href="https://www.energy-stats.uk/octopus-agile/">energy-stats</a>. The pricing data is released at approximately 16:00Z for the next 23:00Z to 23:00Z period. 
+
+This node always retrieves all the data available - by requesting 48h ahead (the original borpin code obtains 24h ahead only).
 
 The purpose of this node is to simplify retrieving this data so it can be used to inform people or processes of the current price and when the best time might be to consume electrcity.
 
@@ -22,7 +24,7 @@ It can also be installed into the Home Assistant Node-RED add-on with the follow
 
 ```
 npm_packages:
-  - 'git+https://github.com/borpin/node-red-contrib-octopus.git'
+  - 'git+https://github.com/wardienet/node-red-contrib-octopus.git'
 ```
 
 If you want the *dev* branch, add `#dev` to the end of the URL.
