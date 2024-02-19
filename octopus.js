@@ -99,7 +99,9 @@ module.exports = function(RED) {
                                         let min_block_start = blocks_result.indexOf(Math.min(...blocks_result)) + block - 1;
                                         msg.min_block_start = min_block_start;
 
-                                        blocks_output.push({ "min Block Price": Math.min(...blocks_result), "min Block valid From":msg.payload.results[min_block_start].valid_from, "min_block_size_mins": block * 30 });
+                                        // PW adjusted the output to avoid spaces in key/value pairs
+                                        //blocks_output.push({ "min Block Price": Math.min(...blocks_result), "min Block valid From":msg.payload.results[min_block_start].valid_from, "min_block_size_mins": block * 30 });
+                                        blocks_output.push({ "min_block_price": Math.min(...blocks_result), "min_block_valid_from":msg.payload.results[min_block_start].valid_from, "min_block_size_mins": block * 30 });
                                         // msg2.payload.min_block = { "min Block Price": Math.min(...blocks_result), "min Block valid From":msg.payload.results[min_block_start].valid_from, "min_block_size_mins": num_blocks * 30 };
                                     }
                                 });
